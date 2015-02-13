@@ -15,21 +15,28 @@
     "angular-sanitize": "^1.3.0",
     "angular-touch": "^1.3.0",
     "angular-css": "~1.0.6",
-    "bootswatch": "~3.3.1+2",
     "angular-ui": "~0.4.0",
-    "angular-bootstrap": "~0.12.0"
+    "angular-bootstrap": "~0.12.0",
+    "angular-ui-bootstrap": "~0.12.0",
+    "moment": "~2.9.0",
+    "angular-ui-calendar": "~0.9.0-beta.1",
+    "angular-google-chart": "~0.0.11"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",
     "angular-scenario": "~1.3.0",
-    "bootswatch-scss": "~3.2.0",
-    "bootswatch": "~3.3.1+2",
     "angular-css": "~1.0.6",
     "angular-ui": "~0.4.0",
-    "angular-bootstrap": "~0.12.0"
+    "angular-bootstrap": "~0.12.0",
+    "angular-ui-bootstrap": "~0.12.0",
+    "moment": "~2.9.0",
+    "angular-ui-calendar": "~0.8.1",
+    "angular-google-chart": "~0.0.11"
   },
   "appPath": "app",
   "resolutions": {
-    "bootswatch": "~3.3.1+2"
+    "fullcalendar": "~2.2.6",
+    "angular": ">= 1.3.0",
+    "jquery": "~1.10.2"
   }
 }
