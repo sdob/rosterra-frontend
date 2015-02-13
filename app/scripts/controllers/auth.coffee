@@ -17,10 +17,11 @@ angular.module('rosterraApp')
     $scope.logout = () ->
       console.log "logging out"
       $cookieStore.remove 'token'
+      $cookieStore.remove 'user_id'
       $location.path '/'
 
     $scope.openModal = () ->
-      console.log "sminky pinky"
+      console.log "opening authentication modal"
       modalInstance = $modal.open {
         templateUrl: 'views/partials/login.html'
         controller: 'ModalauthCtrl'
@@ -28,7 +29,4 @@ angular.module('rosterraApp')
         resolve: {
         }
       }
-      modalInstance.result.then (something) ->
-        console.log 'kitchy koo'
-        console.log something
   ]

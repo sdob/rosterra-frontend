@@ -8,19 +8,18 @@
  # Controller of the rosterraApp
 ###
 angular.module('rosterraApp')
-  .controller 'ModalauthCtrl', ($scope, $modalInstance, $http, $cookieStore) ->
+  .controller 'ModalauthCtrl', (authService, $scope, $modalInstance, $http, $cookieStore, $location) ->
     $scope.submit = () ->
       user = {
         'username': $scope.username
         'password': $scope.password
       }
-      # Submit the user data
-      $http
-        .post 'http://localhost:8000/authenticate', user
+      # Submit the user data --- pass this to authService and let it worry
+      # about the details. If login works, close up the modal and
+      # relocate to the dashboard
+      authService.login(user)
         .success (data, status, headers, config) ->
-          console.log "token: '" + data.token + "'"
-          $cookieStore.put 'token', data.token
           $modalInstance.close()
-          #$location.path '/'
-        .error (data, status, headers, confi) ->
+          $location.path '/dash'
+        .error (data, status, headers, config) ->
           console.log "error: '" + status + "'"

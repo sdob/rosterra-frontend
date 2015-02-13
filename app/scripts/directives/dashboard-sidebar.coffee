@@ -8,6 +8,6 @@
 ###
 angular.module('rosterraApp')
   .directive('dashboardSidebar', ->
-    templateUrl: 'views/partials/dashboard-sidebar.html'
+    templateUrl: 'views/partials/dashboard/sidebar.html'
     restrict: 'E'
   )

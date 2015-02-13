@@ -1,0 +1,63 @@
+<!-- side panel menu -->
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li><a href ng-click="collapseCompanyList = !collapseCompanyList">
+      <img style="height: 2em; width: 2em;"
+      ng-src="http://lorempixel.com/100/100/technics/{{currentCompany.id}}">
+      {{ currentCompany.name }}
+      <span class="caret" ng-if="companies.length > 1"></span>
+    </a>
+    <ul class="collapsible-nav-list"
+      collapse="collapseCompanyList">
+      <li ng-repeat="company in companies" ng-hide="company == currentCompany">
+      <a href ng-click="setCurrentCompanyAndCollapse(company.id)">
+        <img style="height: 2em; width: 2em;" ng-src="http://lorempixel.com/100/100/technics/{{company.id}}">
+        {{ company.name }}
+      </a>
+      </li>
+      </li>
+    </ul>
+  </ul>
+  <ul ng-if="!allowManagerialDisplay[currentCompany.id]" class="nav nav-sidebar">
+    <li><a href>You're</a></li>
+    <li><a href>not</a></li>
+    <li><a href>a</a></li>
+    <li><a href>manager</a></li>
+  </ul>
+  <ul ng-if="allowManagerialDisplay[currentCompany.id]" class="nav nav-sidebar">
+    <li><a href ng-click="setView('overview')">Overview</a></li>
+    <li><a href ng-click="setView('reports')">Reports</a></li>
+    <li><a href>Analytics</a></li>
+    <li><a href>Export</a></li>
+    <li>
+    <a href
+      ng-show="employees.length > 0"
+      ng-click="collapseEmployeeList = !collapseEmployeeList">Employees
+      <span ng-show="collapseEmployeeList" class="caret"> </span>
+      <span ng-show="!collapseEmployeeList" class="caret caret-reversed"> </span>
+    </a>
+    <ul
+      class="collapsible-nav-list size-constrained-nav-list"
+      collapse="collapseEmployeeList">
+      <li ng-repeat="employee in employees">
+      <a href ng-click="openEmployeeModal(1)">
+        <img ng-src="http://lorempixel.com/24/24/people/{{ employee.id }}">
+        <span>{{ employee.name }}</span>
+      </a>
+      </li>
+    </ul>
+    </li>
+
+    <li>
+    <a href
+      ng-show="locations.length > 0"
+      ng-click="collapseLocationList = !collapseLocationList">Locations
+      <span ng-show="collapseLocationList" class="caret"> </span>
+      <span ng-show="!collapseLocationList" class="caret caret-reversed"> </span>
+    </a>
+    <ul class="collapsible-nav-list size-constrained-nav-list" collapse="collapseLocationList">
+      <li ng-repeat="location in locations"><a href>{{ location.name }}</a></li>
+    </ul>
+    </li>
+  </ul>
+</div>

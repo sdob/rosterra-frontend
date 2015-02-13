@@ -1,3 +1,40 @@
+body {
+    font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.caret.caret-reversed {
+    border-top-width: 0;
+    border-bottom: 4px solid;
+}
+.jumbotron h1, .jumbotron .h1 {
+    font-size: 100px;
+}
 .branding {
     font-family: 'Grand Hotel', sans-serif;
+}
+h1 {
+    margin-bottom: 0.4em;
+}
+.bottom-spacer-10px {
+    margin-bottom: 10px;
+}
+.bottom-spacer-20px {
+    margin-bottom: 20px;
+}
+.nav-sidebar ul.collapsible-nav-list {
+    padding-left: 0px
+}
+.nav-sidebar ul.collapsible-nav-list > li > a {
+    display: block;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    background-color: #e0e0e0;
+    border-top: #f5f5f5 1px solid;
+    border-bottom: #f5f5f5 1px solid;
+    text-decoration: none;
+}
+.nav-sidebar ul.size-constrained-nav-list {
+    max-height: 200px;
+    overflow-y: scroll;
 }

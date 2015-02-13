@@ -1,16 +1,25 @@
-<!-- top fixed navbar -->
 <dashboard-nav-top></dashboard-nav-top>
 <div class="container-fluid">
   <div class="row">
     <dashboard-sidebar></dashboard-sidebar>
     <!-- Main panel -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      <h1 class="page-header">{{currentPageName}}</h1>
+      <!-- <h1 class="page-header">{{currentPageName}}</h1> -->
+      <!-- put calendar here -->
+      <div ng-if="view == 'overview'">
+        <dashboard-calendar></dashboard-calendar>
+      </div>
+      <div ng-if="view == 'reports'">
+        <h1 class="page-header">Reports</h1>
+        <dashboard-report></dashboard-report>
+      </div>
+      <!--
       <h3 class="sub-header">Reports</h3>
       <h3 class="sub-header">Analytics</h3>
       <h3 class="sub-header">Export</h3>
       <h3 class="sub-header">Employees</h3>
       <h3 class="sub-header">Locations</h3>
+      -->
     </div>
   </div>
 </div>
