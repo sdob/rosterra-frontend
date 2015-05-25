@@ -68,6 +68,7 @@ module.exports = (config) ->
       'karma-phantomjs-launcher'
       'karma-jasmine'
       'karma-coffee-preprocessor'
+      'karma-coverage'
     ]
 
     # enable / disable watching file and executing tests whenever any file changes
@@ -79,7 +80,15 @@ module.exports = (config) ->
 
     colors: true
 
-    preprocessors: '**/*.coffee': ['coffee']
+    reporters: ['coverage', 'progress']
+
+    preprocessors:
+      '**/*.coffee': ['coffee']
+      'app/scripts/**/*.coffee': ['coverage']
+
+    coverageReporter:
+      type: 'lcov'
+      dir: 'coverage/'
 
     # Uncomment the following lines if you are using grunt's server to run the tests
     # proxies: '/': 'http://localhost:9000/'

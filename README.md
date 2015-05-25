@@ -2,6 +2,7 @@ rosterra-frontend
 =================
 
 [![Build Status](https://travis-ci.org/sdob/rosterra-frontend.svg)](https://travis-ci.org/sdob/rosterra-frontend)
+[![Coverage Status](https://coveralls.io/repos/sdob/rosterra-frontend/badge.svg)](https://coveralls.io/r/sdob/rosterra-frontend)
 
 This is the Angular frontend for Rosterra.
 
