@@ -15,5 +15,4 @@ describe 'Controller: MainCtrl', ->
       $scope: scope
     }
 
-  it 'should attach a list of awesomeThings to the scope', ->
-    expect(scope.awesomeThings.length).toBe 3
+  it 'should have proper unit tests', ->
