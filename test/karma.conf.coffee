@@ -87,8 +87,8 @@ module.exports = (config) ->
       'app/scripts/**/*.coffee': ['coverage']
 
     coverageReporter:
-      type: 'lcov'
-      dir: 'coverage/'
+      type: 'lcovonly'
+      subdir: '.'
 
     # Uncomment the following lines if you are using grunt's server to run the tests
     # proxies: '/': 'http://localhost:9000/'
