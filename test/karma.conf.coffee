@@ -80,11 +80,11 @@ module.exports = (config) ->
 
     colors: true
 
-    reporters: ['coverage', 'progress']
+    reporters: ['progress', 'coverage']
 
     preprocessors:
-      '**/*.coffee': ['coffee']
-      'app/scripts/**/*.coffee': ['coverage']
+      'app/**/*.coffee': ['coffee', 'coverage']
+      'test/**/*.coffee': ['coffee']
 
     coverageReporter:
       type: 'lcovonly'
