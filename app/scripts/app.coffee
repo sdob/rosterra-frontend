@@ -8,7 +8,7 @@
 #
 # Main module of the application.
 ###
-BASE_URL = 'http://54.72.118.29:8000'
+BASE_URL = 'http://localhost:8000/'
 angular
     .module('rosterraApp', [
       'ngAnimate',
