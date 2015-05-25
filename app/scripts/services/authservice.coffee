@@ -32,6 +32,6 @@ angular.module('rosterraApp')
         $cookieStore.remove 'token' 
         $cookieStore.remove 'user_id' 
         delete $http.defaults.headers.common['Authorization']
-        $location.path '/'
+        $location.path '/' # Redirect to home page
     }
   ]

@@ -1,0 +1,75 @@
+<dashboard-nav-top></dashboard-nav-top>
+<!-- sidebar -->
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li><a href>Contact details</a></li>
+    <li><a href>Companies</a></li>
+  </ul>
+</div>
+<!-- end sidebar -->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <!-- <h1>Profile</h1> -->
+  <div id="profile-main">
+    <div class="row">
+      <div class="col-sm-3 col-sm-offset-2">
+        <img ng-src="http://lorempixel.com/120/120/people/{{user.id}}/" />
+      </div>
+      <div class="col-sm-7 col-sm-offset 5">
+        <p>{{ user.name }}</p>
+        <p>{{ user.email }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <h3>Contact details
+        <span ng-bind="saveStateInfo" style="color: #9d9d9d; font-size: 14px;"></span>
+      </h3>
+    </div>
+
+    <form class="form-horizontal">
+      <div style="margin-top: 10px">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Address Line 1</label>
+          <div class="col-sm-10">
+            <input class="form-control" ng-blur="save()" ng-model="user.address_line_1" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Address Line 2</label>
+          <div class="col-sm-10">
+            <input class="form-control" ng-blur="save()" ng-model="user.address_line_2" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">City</label>
+          <div class="col-sm-10">
+            <input class="form-control" ng-blur="save()" ng-model="user.city" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Country</label>
+          <div class="col-sm-10">
+            <select class="form-control" ng-blur="save()" ng-model="user.country">
+              <option ng-repeat="country in countries" value="{{ country.id }}">{{ country.name }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <div id="profile-companies">
+
+    <h3>Companies</h3>
+    <div ng-repeat="employment in employments" class="row">
+      <div class="col-sm-2 pull-right">
+        <img ng-src="{{employment.imageUrl}}" />
+      </div>
+      <div class="col-sm-6">
+      {{ employment.role }} at <a href="http://example.com/companies/{{employment.company}}/">{{ employment.company_name }}</a>
+    </div>
+    </div>
+
+  </div>
+
+</div>

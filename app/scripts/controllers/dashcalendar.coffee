@@ -59,7 +59,7 @@ angular.module('rosterraApp')
           center: ''
           right: 'agendaDay agendaWeek prev,next'
         }
-        slotEventOverlap: false
+        #slotEventOverlap: false
         editable: true
         # TODO: restrict droppable elements to employee items
         droppable: true
@@ -68,9 +68,8 @@ angular.module('rosterraApp')
         eventResize: $scope.eventEdit
         eventDrop: $scope.eventEdit
         events: (s, e, t, c) ->
-          console.log 'calling events function'
-          console.log [s.toISOString(), e.toISOString()]
-          console.log "eventSourceUrl: " + $scope.eventSourceUrl
+          console.log "s ,e, t, c"
+          console.log [s, e, t, c]
           if $scope.eventSourceUrl
             $http.get $scope.eventSourceUrl, {params:
               {
@@ -79,6 +78,8 @@ angular.module('rosterraApp')
               }
             }
               .success (data) ->
+                console.log "unparsed:"
+                console.log data[0]
                 parsed = ({
                   start: o.start
                   end: o.end
@@ -86,6 +87,9 @@ angular.module('rosterraApp')
                   employee: o.employee.id
                   re_id: o.id
                 } for o in data)
-                c(parsed)
+                console.log "parsed:"
+                console.log parsed[0]
+                c parsed
+                return
       }
     }

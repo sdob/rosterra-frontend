@@ -14,22 +14,29 @@ angular.module('rosterraApp')
       #########################################################################
       # Methods with variable parameters
       #########################################################################
+
       getActivities: (params) ->
-        $http.get(cfg.apiUrl + '/activities/', {params: params})
+        $http.get("#{cfg.apiUrl}/activities/", {params: params})
       getCompanies: (params) ->
-        $http.get(cfg.apiUrl + '/companies/', {params: params})
+        $http.get("#{cfg.apiUrl}/companies/", {params: params})
       getEmployees: (params) ->
-        $http.get(cfg.apiUrl + '/employees/', {params: params})
+        $http.get("#{cfg.apiUrl}/employees/", {params: params})
       getRosterEntries: (params) ->
-        $http.get(cfg.apiUrl + '/roster-entries/', {params: params})
+        $http.get("#{cfg.apiUrl}/roster-entries/", {params: params})
       getLocations: (params) ->
-        $http.get((cfg.apiUrl + '/locations/'), {params: params})
+        $http.get("#{cfg.apiUrl}/locations/", {params: params})
       getEmployments: (params) ->
-        $http.get(cfg.apiUrl + '/employments/', {params: params})
+        $http.get("#{cfg.apiUrl}/employments/", {params: params})
+      getCountries: (params) ->
+        $http.get("#{cfg.apiUrl}/countries/", {params: params})
+      
+
       #########################################################################
       # Methods with fixed parameters
       #########################################################################
-      getProfile: (user_id) ->
-        $http.get(cfg.apiUrl + '/employees/' + user_id + '/profile/')
+
+      getEmployee: (user_id) -> $http.get "#{cfg.apiUrl}/employees/#{user_id}/"
+      patchEmployee: (user_id, data) -> $http.patch "#{cfg.apiUrl}/employees/#{user_id}", data
+
     }
   ]

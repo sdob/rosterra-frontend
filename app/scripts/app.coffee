@@ -22,7 +22,8 @@ angular
       'door3.css',
       'ui.bootstrap',
       'ui.calendar',
-      'googlechart'
+      'googlechart',
+      'angularSpinner'
     ])
     .constant 'cfg', {
       baseUrl: BASE_URL
@@ -42,6 +43,10 @@ angular
             .when '/login',
               templateURL: 'views/partials/login.html'
               controller: 'ModalauthCtrl'
+            .when '/profile',
+              templateUrl: 'views/profile.html'
+              controller: 'ProfileCtrl'
+              css: 'styles/dashboard.css'
             .otherwise
             redirectTo: '/'
       .run ($cookieStore, $http, $injector, authService) ->

@@ -16,6 +16,9 @@ angular.module('rosterraApp')
         controller: ->
       }
 
+    #$scope.showProfile = () ->
+    #$location.path '/profile/'
+
     $scope.switchView = () ->
       if $scope.currentView == 'employee'
         $scope.setView 'company'
@@ -59,9 +62,9 @@ angular.module('rosterraApp')
 
     # Tell the authentication service to log us out, then redirect to the
     # home page
-    $scope.logout = () ->
-      authService.logout()
-      $location.path('/')
+    #$scope.logout = () ->
+    #authService.logout()
+    #$location.path('/')
 
     # Retrieve location, employee, and activity data for the current company
     # from the API server
@@ -121,7 +124,7 @@ angular.module('rosterraApp')
     
     # Retrieve user profile data
     $scope.user = {}
-    api.getProfile($cookieStore.get 'user_id')
+    api.getEmployee($cookieStore.get 'user_id')
       .success (data) ->
         $scope.user = data
 

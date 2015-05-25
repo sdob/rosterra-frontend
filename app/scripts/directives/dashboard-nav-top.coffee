@@ -7,7 +7,8 @@
  # # dashboardNavTop
 ###
 angular.module('rosterraApp')
-  .directive('dashboardNavTop', ->
+  .directive('dashboardNavTop', (dashNav) ->
     templateUrl: 'views/partials/dashboard/nav-top.html'
+    controller: 'DashNavCtrl'
     restrict: 'E'
   )
