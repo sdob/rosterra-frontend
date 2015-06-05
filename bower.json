@@ -19,9 +19,10 @@
     "angular-bootstrap": "~0.12.0",
     "angular-ui-bootstrap": "~0.12.0",
     "moment": "~2.9.0",
-    "angular-ui-calendar": "~0.9.0-beta.1",
+    "angular-ui-calendar": "latest",
     "angular-google-chart": "~0.0.11",
-    "angular-spinner": "~0.6.1"
+    "angular-spinner": "~0.6.1",
+    "angular-local-storage": "~0.2.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",
@@ -31,7 +32,7 @@
     "angular-bootstrap": "~0.12.0",
     "angular-ui-bootstrap": "~0.12.0",
     "moment": "~2.9.0",
-    "angular-ui-calendar": "~0.8.1",
+    "angular-ui-calendar": "latest",
     "angular-google-chart": "~0.0.11",
     "angular-spinner": "~0.6.1"
   },
