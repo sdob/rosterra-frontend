@@ -24,8 +24,9 @@ module.exports = (config) ->
       'bower_components/angular-route/angular-route.js'
       'bower_components/angular-sanitize/angular-sanitize.js'
       'bower_components/angular-touch/angular-touch.js'
+      'bower_components/angular-local-storage/dist/angular-local-storage.js'
       # Manual imports
-      'bower_components/jquery/jquery.js'
+      'bower_components/jquery/dist/jquery.js'
       'bower_components/angular-css/angular-css.js'
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
       'bower_components/angular-ui-calendar/src/calendar.js'
@@ -36,7 +37,7 @@ module.exports = (config) ->
       'bower_components/spin.js/spin.js'
       'bower_components/angular-spinner/angular-spinner.js'
       # Test code
-      'app/scripts/**/*.coffee'
+      'app/scripts/**/*.js'
       'test/mock/**/*.coffee'
       'test/spec/**/*.coffee'
     ],
